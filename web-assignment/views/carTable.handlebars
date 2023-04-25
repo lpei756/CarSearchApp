@@ -1,0 +1,37 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Country</th>
+            <th>Price</th>
+            <th>Odometer</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each cars}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{carMake}}</td>
+            <td>{{carModel}}</td>
+            <td>{{carYear}}</td>
+            <td>{{country}}</td>
+            <td>{{price}}</td>
+            <td>{{odometer}}</td>
+            <td>
+                <div>
+                    <input type="checkbox" id="favorite-{{id}}" class="favorite-checkbox" onchange="addToFavorites({ id: {{id}}, carMake: '{{carMake}}', carModel: '{{carModel}}', carYear: {{carYear}}, country: '{{country}}', price: {{price}}, odometer: {{odometer}} })" />
+                    <label for="favorite-{{id}}">
+                        <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6">
+                            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                        </svg> Favorite
+                    </label>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
