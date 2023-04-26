@@ -1,0 +1,68 @@
+{{#each cars}}
+<div class="car-item" data-car-id="{{id}}">
+    <table class="car-table">
+        <tbody>
+            <tr>
+                <td>ID: {{id}}</td>
+            </tr>
+            <tr>
+                <td>Make: {{carMake}}</td>
+            </tr>
+            <tr>
+                <td>Model: {{carModel}}</td>
+            </tr>
+            <tr>
+                <td>Year: {{carYear}}</td>
+            </tr>
+            <tr>
+                <td>Country: {{country}}</td>
+            </tr>
+            <tr>
+                <td>Price: {{price}}</td>
+            </tr>
+            <tr>
+                <td>Odometer: {{odometer}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="heart-{{id}}" class="heart white" onclick="window.toggleFavorite({{id}})">❤️Favorite</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{/each}}
+
+<style>
+    .table-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .car-table {
+        box-sizing: border-box;
+        border-collapse: collapse;
+        margin: 0;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .heart {
+        cursor: pointer;
+    }
+
+    .heart.red {
+        color: red;
+    }
+
+    .heart.white {
+        color: white;
+    }
+</style>
