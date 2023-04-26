@@ -1,0 +1,108 @@
+<<<<<<< HEAD
+{{#each cars}}
+<div class="car-item" data-car-id="{{id}}">
+    <table class="car-table">
+        <tbody>
+            <tr>
+                <td>ID: {{id}}</td>
+            </tr>
+            <tr>
+                <td>Make: {{carMake}}</td>
+            </tr>
+            <tr>
+                <td>Model: {{carModel}}</td>
+            </tr>
+            <tr>
+                <td>Year: {{carYear}}</td>
+            </tr>
+            <tr>
+                <td>Country: {{country}}</td>
+            </tr>
+            <tr>
+                <td>Price: {{price}}</td>
+            </tr>
+            <tr>
+                <td>Odometer: {{odometer}}</td>
+            </tr>
+            <tr>
+                <td>
+                    <button id="heart-{{id}}" class="heart white" onclick="window.toggleFavorite({{id}})">❤️Favorite</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{{/each}}
+
+<style>
+    .table-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .car-table {
+        box-sizing: border-box;
+        border-collapse: collapse;
+        margin: 0;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .heart {
+        cursor: pointer;
+    }
+
+    .heart.red {
+        color: red;
+    }
+
+    .heart.white {
+        color: white;
+    }
+</style>
+=======
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Country</th>
+            <th>Price</th>
+            <th>Odometer</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each cars}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{carMake}}</td>
+            <td>{{carModel}}</td>
+            <td>{{carYear}}</td>
+            <td>{{country}}</td>
+            <td>{{price}}</td>
+            <td>{{odometer}}</td>
+            <td>
+                <div>
+                    <input type="checkbox" id="favorite-{{id}}" class="favorite-checkbox" onchange="addToFavorites({ id: {{id}}, carMake: '{{carMake}}', carModel: '{{carModel}}', carYear: {{carYear}}, country: '{{country}}', price: {{price}}, odometer: {{odometer}} })" />
+                    <label for="favorite-{{id}}">
+                        <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 29.6">
+                            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+                        </svg> Favorite
+                    </label>
+                </div>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+>>>>>>> origin/master
